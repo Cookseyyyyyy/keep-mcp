@@ -1,0 +1,19 @@
+.venv/
+.uv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Secrets & local data (never commit)
+.env
+.env.*
+!.env.example
+/data/
+
+.DS_Store

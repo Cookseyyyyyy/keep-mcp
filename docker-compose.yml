@@ -1,0 +1,18 @@
+services:
+  keep-mcp:
+    build: .
+    image: keep-mcp:latest
+    container_name: keep-mcp
+    restart: unless-stopped
+    environment:
+      MCP_AUTH_TOKEN: "${MCP_AUTH_TOKEN:-}"
+      MCP_PUBLIC_BASE_URL: "${MCP_PUBLIC_BASE_URL:-}"
+      GOOGLE_EMAIL: "${GOOGLE_EMAIL:-}"
+      GOOGLE_MASTER_TOKEN: "${GOOGLE_MASTER_TOKEN:-}"
+      KEEP_DEFAULT_LIST: "${KEEP_DEFAULT_LIST:-Shopping}"
+      KEEP_WRITE_TITLES: "${KEEP_WRITE_TITLES:-}"
+      TZ: "Europe/London"
+    ports:
+      - "8788:8788"
+    volumes:
+      - ./data:/home/app/.keep-mcp
